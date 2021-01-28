@@ -14,6 +14,13 @@
     &:hover {
       background-color: #ffffff; 
     }
+
+    // &:hover + .table__btn {
+    //   visibility: visible;
+    //   opacity: 75%;  
+    // }
+
+    
   }
 
   &__edit {
@@ -68,12 +75,13 @@
   }
 
   &__btn {
-    // display: none;
+    visibility: hidden;
     width: 20px;
     height: 20px;
     opacity: 0;
 
     transition: opacity 0.2s;
+    
 
     &.edit {
       background-image: url('../../assets/icons/edit.svg');
@@ -85,10 +93,12 @@
   }
 }
 
-.table__subscr:hover .table__btn {
-  // display: inline-block;
-  opacity: 75%;
-}
-.table__subscr:hover .table__btn:hover {
-  opacity: 1;
-}
+// .table__subscr:hover .table__btn {
+//   // display: inline-block;
+//   visibility: visible;
+//   opacity: 75%;
+  
+// }
+// .table__subscr:hover .table__btn:hover {
+//   opacity: 1;
+// }

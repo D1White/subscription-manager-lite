@@ -91,7 +91,14 @@
       // justify-content: right;
     }
   }
+
+  &__scroll {
+    max-height: 700px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
 }
+
 
 // .headr, .table__row {
 //   display: flex;

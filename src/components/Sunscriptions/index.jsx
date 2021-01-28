@@ -33,15 +33,17 @@ function index() {
             <span className='table__col'></span>
           </div>
           <hr/>
-          {subscriptions.map((subscr, index) => (
-            <Subscription
-              service={subscr.service}
-              price={subscr.price}
-              date={subscr.date}
-              color={subscr.color}
-              key={`${subscr.service}_${index}`}
-            />
-          ))}
+          <div className="table__scroll">
+            {subscriptions.map((subscr, index) => (
+              <Subscription
+                service={subscr.service}
+                price={subscr.price}
+                date={subscr.date}
+                color={subscr.color}
+                key={`${subscr.service}_${index}`}
+              />
+            ))}
+          </div>
         </div>
 
       </div>
