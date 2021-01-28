@@ -1,11 +1,24 @@
 @import '../../scss/variables.scss';
 
 .table {
+
   &__subscr {
     width: 100%;
     padding: 14px;
+    border-radius: 17px;
     display: flex;
     align-items: center;
+    position: relative;
+
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: #ffffff; 
+    }
+  }
+
+  &__edit {
+    position: absolute;
+    left: 200px;
   }
 
   &__logo {
@@ -46,4 +59,36 @@
       text-align: right;
     }
   }
+
+  &__actions {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__btn {
+    // display: none;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+
+    transition: opacity 0.2s;
+
+    &.edit {
+      background-image: url('../../assets/icons/edit.svg');
+    }
+
+    &.delete {
+      background-image: url('../../assets/icons/delete.svg');
+    }
+  }
+}
+
+.table__subscr:hover .table__btn {
+  // display: inline-block;
+  opacity: 75%;
+}
+.table__subscr:hover .table__btn:hover {
+  opacity: 1;
 }

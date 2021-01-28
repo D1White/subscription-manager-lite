@@ -30,6 +30,7 @@ function index() {
               <br />
               month on the:
             </span>
+            <span className='table__col'></span>
           </div>
           <hr/>
           {subscriptions.map((subscr, index) => (

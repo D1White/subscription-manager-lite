@@ -18,6 +18,10 @@ function Subscription({ service, price, date, color }) {
           {date}
           <small>th</small>
         </span>
+        <div className="table__actions">
+          <button type='button' className='table__btn edit' />
+          <button type='button' className='table__btn delete' />
+        </div>
     </div>
   );
 }
