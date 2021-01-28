@@ -1,0 +1,105 @@
+@import '../../scss/variables.scss';
+
+.subscr {
+  width: calc(100% - 520px);
+  &__container {
+    width: 100%;
+    max-width: 1083px;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  &__add-btn{
+    padding: 9px 13px;
+    border-radius: 12px;
+    border: 2px solid $black_text;
+
+    display: flex;
+    align-items: center;
+
+    &>span {
+      font-size: 20px;
+      margin-left: 7px;
+    }
+
+    transition: background-color .1s;
+
+    &:hover {
+      background-color: $green;
+    }
+
+    &:active {
+      background-color: lighten($green, 5%);
+    }
+  }
+
+  &__table {
+    display: flex;
+    flex-direction: column;
+    >hr {
+      width: 100%;
+      height: 2px;
+      background-color: $white_line;
+      margin-top: 13px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.table {
+  &__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: default;
+  }
+
+  &__col{
+    // width: 100%;
+    font-size: 20px;
+    line-height: 23px;
+    
+    flex: 3;
+
+
+    &:first-child {
+      flex: 1;
+    }
+
+    &.price {
+      text-align: center;
+    }
+
+    &.date {
+      text-align: right;
+      // display: flex;
+      // justify-content: right;
+    }
+  }
+}
+
+// .headr, .table__row {
+//   display: flex;
+// }
+
+// .col {
+//   flex: 3;
+// }
+// .col:first-child {
+//   flex: 1;
+// }

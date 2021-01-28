@@ -1,9 +1,11 @@
+import { Sunscriptions, Information } from './components'
 
 function App() {
   return (
-    <div>
-
-    </div>
+    <>
+      <Sunscriptions />
+      <Information />
+    </>
   );
 }
 

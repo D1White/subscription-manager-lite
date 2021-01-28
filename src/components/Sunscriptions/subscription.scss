@@ -1,0 +1,49 @@
+@import '../../scss/variables.scss';
+
+.table {
+  &__subscr {
+    width: 100%;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 50px;
+    height: 50px;
+    // padding: 9px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    >span {
+      font-size: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+      opacity: 1;
+    }
+
+    >.bg {
+      position: absolute;
+      border-radius: 10px;
+      width: 50px;
+      height: 50px;
+      opacity: 20%;
+    }
+  }
+
+  &__text {
+    flex: 3;
+
+    &.price {
+      font-weight: 700;
+      text-align: center;
+    }
+
+    &.date {
+      text-align: right;
+    }
+  }
+}
