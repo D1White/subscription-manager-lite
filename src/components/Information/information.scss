@@ -2,12 +2,15 @@
 
 .inf {
   width: 520px;
+  height: 100%;
   &__container {
     width: 100%;
+    height: 100%;
     padding: 50px 100px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border-left: 2px solid $white_line;
   }
   
@@ -28,5 +31,52 @@
     }
   }
 
+  &__main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__profit-block {
+    display: flex;
+    align-items: flex-start;
+
+    &__btn {
+      width: 20px;
+      height: 20px;
+      background-image: url('../../assets/icons/edit.svg');
+      opacity: 25%;
+      margin-left: 10px;
+    }
+  }
+
+  &__text {
+    &-s {
+      font-size: 18px;
+      font-weight: 400;
+      margin-top: 13px;
+    }
+    &-m {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    &-l {
+      font-size: 48px;
+      font-weight: 700;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    border: $white_line solid 1px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
 
 }

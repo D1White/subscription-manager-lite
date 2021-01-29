@@ -5,7 +5,7 @@ import ellipse_plus from "../../assets/icons/ellipse_plus.svg";
 import Subscription from "./Subscription";
 import subscriptions from "../../assets/subscriptions.json";
 
-function index() {
+function Subscriptions() {
   return (
     <div className="subscr">
       <div className="subscr__container">
@@ -51,4 +51,4 @@ function index() {
   );
 }
 
-export default index;
+export default Subscriptions;

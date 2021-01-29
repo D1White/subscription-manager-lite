@@ -15,12 +15,14 @@
       background-color: #ffffff; 
     }
 
-    // &:hover + .table__btn {
-    //   visibility: visible;
-    //   opacity: 75%;  
-    // }
+    &:hover>.table__actions>.table__btn {
+      visibility: visible;
+      opacity: 75%;  
+    }
 
-    
+    &:hover>.table__actions>.table__btn:hover {
+      opacity: 1;
+    }
   }
 
   &__edit {
@@ -43,14 +45,15 @@
       font-weight: 700;
       text-transform: uppercase;
       opacity: 1;
+      position: absolute;
     }
 
     >.bg {
-      position: absolute;
       border-radius: 10px;
       width: 50px;
       height: 50px;
       opacity: 20%;
+      background-color: $white_line;
     }
   }
 
@@ -81,7 +84,6 @@
     opacity: 0;
 
     transition: opacity 0.2s;
-    
 
     &.edit {
       background-image: url('../../assets/icons/edit.svg');
@@ -92,13 +94,3 @@
     }
   }
 }
-
-// .table__subscr:hover .table__btn {
-//   // display: inline-block;
-//   visibility: visible;
-//   opacity: 75%;
-  
-// }
-// .table__subscr:hover .table__btn:hover {
-//   opacity: 1;
-// }
