@@ -20,7 +20,7 @@ function Information() {
         <div className='inf__header'>
           <div className='inf__user'>
             <img
-              src='https://www.meme-arsenal.com/memes/7f7ac55cae30a63e926193968f5c4915.jpg'
+              src='https://i.ibb.co/6DsnTyG/avatar.png'
               alt='user avatar'
             />
             <span>User</span>

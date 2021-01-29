@@ -3,6 +3,7 @@ import "./subscriptions.scss";
 
 import ellipse_plus from "../../assets/icons/ellipse_plus.svg";
 import Subscription from "./Subscription";
+import Inputs from "./Inputs";
 import subscriptions from "../../assets/subscriptions.json";
 
 function Subscriptions() {
@@ -34,6 +35,7 @@ function Subscriptions() {
           </div>
           <hr/>
           <div className="table__scroll">
+            <Inputs />
             {subscriptions.map((subscr, index) => (
               <Subscription
                 service={subscr.service}
@@ -45,7 +47,6 @@ function Subscriptions() {
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );

@@ -1,0 +1,153 @@
+@import "../../scss/variables.scss";
+
+.table {
+  &__form {
+    width: 100%;
+    height: 70px;
+    padding: 0px 14px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__picker {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+
+    &-block {
+      width: 50px;
+      height: 50px;
+      // padding: 13px;
+      border-radius: 50%;
+      background-color: #eeeeee;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+
+      &:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
+  &__inputs {
+    // width: 100%;
+    // display: flex;
+    // justify-content: space-between;
+
+    &-block {
+      flex: 3;
+      display: flex;
+      // align-items: center;
+      // display: flex;
+      
+
+      &:nth-child(3) {
+        justify-content: center;
+      }
+      &:nth-child(4) {
+        justify-content: flex-end;
+      }
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__input {
+    width: 100px;
+    height: 42px;
+    border-radius: 8px;
+    border: rgba(0, 0, 0, 0.1) solid 1px;
+    padding: 11px 8px;
+
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 20px;
+    font-weight: 400;
+    color: $black_text;
+
+    &:focus {
+      border:$blue solid 1px;
+    }
+
+    &.error {
+      border: $red solid 1px;
+    }
+
+    &.service {
+      width: 100%;
+    }
+    &.price {
+      width: 125px;
+    }
+    &.date {
+      width: 105px;
+    }
+  }
+
+  &__error {
+    color: $red;
+    font-size: 16px;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+
+    &>img {
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+    }
+  }
+
+
+  &__form {
+    &__actions {
+      display: flex;
+      align-items: center;justify-content: space-evenly;
+      margin-top: 15px;
+      flex: 1;
+    }
+
+    &__btn {
+      width: 20px;
+      height: 20px;
+      opacity: 0.8;
+  
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.submit {
+        background-image: url('../../assets/icons/check_circle.svg');
+        margin-right: 15px;
+      }
+      &.reset {
+        background-image: url('../../assets/icons/cancel_circle.svg');
+      }
+    }
+  }
+}
+
+.popover {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  border-radius: 9px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  z-index: 50;
+}
+
