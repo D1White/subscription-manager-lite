@@ -1,13 +1,19 @@
-import React from "react";
+import { useState } from "react";
 import "./information.scss";
 
 import { Diagram } from './../../components';
 
 import light_theme from "../../assets/icons/light_theme.svg";
-// import dark_theme from "../../assets/icons/dark_theme.svg";
+import dark_theme from "../../assets/icons/dark_theme.svg";
 // import edit_ico from "../../assets/icons/edit.svg";
 
 function Information() {
+  const [theme, setTheme] = useState(true);
+
+  const themeSwitch = () => {
+    setTheme(!theme);
+  }
+
   return (
     <div className='inf'>
       <div className='inf__container'>
@@ -19,8 +25,8 @@ function Information() {
             />
             <span>User</span>
           </div>
-          <button type='button'>
-            <img src={light_theme} alt='theme switcher' />
+          <button type='button' className='inf__theme-btn' onClick={themeSwitch}>
+            <img src={theme ? light_theme : dark_theme} alt='theme switcher' />
           </button>
         </div>
         <div className='inf_main'>

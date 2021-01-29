@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, memo} from "react";
 import "./diagram.scss";
 
-function Diagram({ profit, subscr }) {
+const Diagram = memo(function Diagram({ profit, subscr }) {
   const ellipse1 = useRef();
   const ellipse2 = useRef();
 
@@ -26,7 +26,7 @@ function Diagram({ profit, subscr }) {
     if (ellipse1.current) {
       const ctx1 = ellipse1.current.getContext("2d");
       ctx1.beginPath();
-      ctx1.arc(187, 76, 60, Math.PI, getPosition(90), false);
+      ctx1.arc(187, 76, 60, Math.PI, getPosition(procent), false);
       ctx1.lineCap = "round";
       let gradient = ctx1.createLinearGradient(0,0, 340,170);
       gradient.addColorStop(0, '#FFD873');
@@ -65,6 +65,6 @@ function Diagram({ profit, subscr }) {
       </div>
     </div>
   );
-}
+});
 
 export default Diagram;
