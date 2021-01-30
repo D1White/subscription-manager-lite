@@ -28,6 +28,11 @@
     
     transition: box-shadow 0.2s;
 
+    &>svg {
+      width: 35px;
+      height: 35px;
+    }
+
     &:hover {
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
     }
@@ -60,11 +65,13 @@
     align-items: flex-start;
 
     &__btn {
-      width: 20px;
-      height: 20px;
-      background-image: url('../../assets/icons/edit.svg');
       opacity: 0.3;
       margin-left: 10px;
+
+      &>svg {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 

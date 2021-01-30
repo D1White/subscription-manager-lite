@@ -16,6 +16,11 @@
     flex: 1;
     position: relative;
 
+    &-ico {
+      width: 24px;
+      height: 24px;
+    }
+
     &-block {
       width: 50px;
       height: 50px;
@@ -104,7 +109,7 @@
     align-items: center;
     margin-top: 8px;
 
-    &>img {
+    &-ico {
       width: 16px;
       height: 16px;
       margin-right: 5px;
@@ -123,20 +128,26 @@
     &__btn {
       width: 20px;
       height: 20px;
-      opacity: 0.8;
-  
-      transition: opacity 0.2s;
-
-      &:hover {
-        opacity: 1;
-      }
 
       &.submit {
-        background-image: url('../../assets/icons/check_circle.svg');
         margin-right: 15px;
+        &>svg {
+          width: 20px;
+          height: 20px;
+          transition: fill 0.2s;
+        }
+        &:hover>svg {
+          fill: $green;
+        }
       }
       &.reset {
-        background-image: url('../../assets/icons/cancel_circle.svg');
+        &>svg {
+          width: 20px;
+          height: 20px;
+        }
+        &:hover>svg {
+          fill: $red;
+        }
       }
     }
   }

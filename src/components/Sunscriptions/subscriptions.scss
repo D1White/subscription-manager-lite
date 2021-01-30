@@ -32,6 +32,18 @@
     display: flex;
     align-items: center;
 
+    &:hover>&__ico {
+      fill: $white_bg;
+    }
+    &:hover>span {
+      color: $white_bg;
+    }
+
+    &__ico {
+      width: 20px;
+      height: 20px;
+    }
+
     &>span {
       font-size: 20px;
       margin-left: 7px;

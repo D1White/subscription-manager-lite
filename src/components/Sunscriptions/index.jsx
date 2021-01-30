@@ -1,24 +1,23 @@
 import React from "react";
 import "./subscriptions.scss";
 
-import ellipse_plus from "../../assets/icons/ellipse_plus.svg";
-import Subscription from "./Subscription";
-import Inputs from "./Inputs";
+import { Subscription, Inputs, SVGSprites } from "../../components";
+
 import subscriptions from "../../assets/subscriptions.json";
 
 function Subscriptions() {
   return (
-    <div className="subscr">
-      <div className="subscr__container">
-        <div className="subscr__header">
-          <span className="subscr__title">Subscriptions:</span>
-          <button type="button" className="subscr__add-btn">
-            <img src={ellipse_plus} alt="add" />
+    <div className='subscr'>
+      <div className='subscr__container'>
+        <div className='subscr__header'>
+          <span className='subscr__title'>Subscriptions:</span>
+          <button type='button' className='subscr__add-btn'>
+            <SVGSprites name='ellipse_plus-icon' title='add' className='subscr__add-btn__ico' />
             <span>add</span>
           </button>
         </div>
-        <div className="subscr__table">
-          <div className="table__header">
+        <div className='subscr__table'>
+          <div className='table__header'>
             <span className='table__col'></span>
             <span className='table__col service'>service:</span>
             <span className='table__col price'>
@@ -33,8 +32,8 @@ function Subscriptions() {
             </span>
             <span className='table__col'></span>
           </div>
-          <hr/>
-          <div className="table__scroll">
+          <hr />
+          <div className='table__scroll'>
             <Inputs />
             {subscriptions.map((subscr, index) => (
               <Subscription

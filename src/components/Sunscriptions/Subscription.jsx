@@ -1,6 +1,8 @@
 import React from "react";
 import "./subscription.scss";
 
+import { SVGSprites } from '../index';
+
 function Subscription({ service, price, date, color }) {
   return (
     <div className="table__subscr">
@@ -19,8 +21,12 @@ function Subscription({ service, price, date, color }) {
           <small>th</small>
         </span>
         <div className="table__actions">
-          <button type='button' className='table__btn edit' />
-          <button type='button' className='table__btn delete' />
+          <button type='button' className='table__btn edit' >
+            <SVGSprites name='edit-icon' />
+          </button>
+          <button type='button' className='table__btn delete' >
+            <SVGSprites name='delete-icon' />
+          </button>
         </div>
     </div>
   );

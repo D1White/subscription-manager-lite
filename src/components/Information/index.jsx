@@ -1,11 +1,7 @@
 import { useState } from "react";
 import "./information.scss";
 
-import { Diagram } from './../../components';
-
-import light_theme from "../../assets/icons/light_theme.svg";
-import dark_theme from "../../assets/icons/dark_theme.svg";
-// import edit_ico from "../../assets/icons/edit.svg";
+import { Diagram, SVGSprites } from './../../components';
 
 function Information() {
   const [theme, setTheme] = useState(true);
@@ -26,7 +22,7 @@ function Information() {
             <span>User</span>
           </div>
           <button type='button' className='inf__theme-btn' onClick={themeSwitch}>
-            <img src={theme ? light_theme : dark_theme} alt='theme switcher' />
+            <SVGSprites name={theme ? 'light_theme-icon' : 'dark_theme-icon'} title='theme switcher'/>
           </button>
         </div>
         <div className='inf_main'>
@@ -34,7 +30,9 @@ function Information() {
             <span className='inf__text-m'>Your Profit</span>
             <div className='inf__profit-block'>
               <span className='inf__text-l'>1 209.59</span>
-              <button type='button' className='inf__profit-block__btn'></button>
+              <button type='button' className='inf__profit-block__btn'>
+                <SVGSprites name='edit-icon' />
+              </button>
             </div>
             <span className='inf__text-s'>USD/month</span>
           </div>

@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import { useDebounce, useDebouncedCallback } from "use-debounce";
+import { useDebouncedCallback } from "use-debounce";
 import { HexColorPicker } from "react-colorful";
+
+import { SVGSprites } from '../index';
 
 import "./inputs.scss";
 import "react-colorful/dist/index.css";
-import color_picker from "../../assets/icons/color_lens.svg";
-import warning_ico from "../../assets/icons/warning.svg";
 
 function Inputs() {
   const colorPicker = useRef();
@@ -47,7 +47,6 @@ function Inputs() {
 
   useEffect(() => {
     if (price) {
-      // if (!/^\d+$/gm.test(price) || parseFloat(price) < 1 || parseFloat(price) > 10000) {
       if (
         !/^\d+\.?\d*$/gm.test(price) ||
         parseFloat(price) < 1 ||
@@ -132,7 +131,9 @@ function Inputs() {
           onClick={pickerSwitcher}
           style={{ backgroundColor: color }}
         >
-          {!isOpen && <img src={color_picker} alt='color picker' />}
+          {!isOpen && (
+            <SVGSprites name='color_lens-icon' title='color picker' className='table__picker-ico' />
+          )}
         </div>
         {isOpen && (
           <div className='popover'>
@@ -154,7 +155,7 @@ function Inputs() {
           />
           {warning.service && (
             <div className='table__error'>
-              <img src={warning_ico} alt='error' />
+              <SVGSprites name='warning-icon' title='warning' className='table__error-ico' />
               Error
             </div>
           )}
@@ -170,7 +171,7 @@ function Inputs() {
           />
           {warning.price && (
             <div className='table__error'>
-              <img src={warning_ico} alt='error' />
+              <SVGSprites name='warning-icon' title='warning' className='table__error-ico' />
               Error
             </div>
           )}
@@ -186,7 +187,7 @@ function Inputs() {
           />
           {warning.date && (
             <div className='table__error'>
-              <img src={warning_ico} alt='error' />
+              <SVGSprites name='warning-icon' title='warning' className='table__error-ico' />
               Error
             </div>
           )}
@@ -194,8 +195,12 @@ function Inputs() {
       </div>
 
       <div className='table__form__actions'>
-        <button type='submit' className='table__form__btn submit' />
-        <button type='reset' className='table__form__btn reset' />
+        <button type='submit' className='table__form__btn submit' >
+          <SVGSprites name='check-icon' />
+        </button>
+        <button type='reset' className='table__form__btn reset' >
+          <SVGSprites name='cancel-icon' />
+        </button>
       </div>
     </div>
   );
