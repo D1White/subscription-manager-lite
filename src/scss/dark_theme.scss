@@ -1,0 +1,52 @@
+@import './variables.scss';
+
+html[theme="dark"] {
+  body {
+    color: $white;
+    background: $dark_bg;
+  }
+  ::-webkit-scrollbar-track {
+    background: $dark_bg;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: lighten($dark_line, 5%);
+  }
+  .icon {
+    fill: $white;
+  }
+  .subscr__add-btn {
+    border: 2px solid $white;
+    &>span {
+      color: $white;
+    }
+  }
+  .subscr__table > hr {
+    background-color: $dark_line;
+  }
+  .table {
+    &__subscr:hover {
+      background-color: $dark_line; 
+    }
+    &__logo>.bg {
+      background-color: $dark_line;
+    }
+  }
+  .table {
+    &__input {
+      color: $white;
+      background-color: $dark_line;
+    }
+  }
+  .inf {
+    &__container {
+      border-left: 2px solid $dark_line;
+    }
+    &__line {
+      border: $dark_line solid 1px;
+    }
+  }
+  .diagram {
+    background-color:$dark_bg;
+    border: $dark_line solid 10px;
+  }
+}

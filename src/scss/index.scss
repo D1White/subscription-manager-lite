@@ -15,9 +15,9 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 /*--------------------*/
 
-$white_bg: #F5F7F9;
-$white_line: #D6D8E7;
-$black_text: #2E3554;
+@import './variables.scss';
+@import './dark_theme.scss';
+
 
 body {
   margin: 0;
@@ -28,7 +28,11 @@ body {
   font-weight: 400;
   color: $black_text;
   background: $white_bg;
+
+  @include transition(color);
+  @include transition(background);
 }
+
 
 #root {
   display: flex;
@@ -46,7 +50,7 @@ body {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: lighten($white_line, 5%); 
+  background: lighten($white_line, 5%);
   border-radius: 10px;
 }
 
@@ -56,8 +60,7 @@ body {
 }
 
 .icon {
-  // width: 35px;
-  // height: 35px;
   fill: $black_text;
+  @include transition(fill);
 }
 

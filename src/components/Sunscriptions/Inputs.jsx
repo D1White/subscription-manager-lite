@@ -169,7 +169,7 @@ const Inputs = observer(({ cancelInput }) => {
         <div className='table__inputs-form'>
           <input
             type='text'
-            className={`table__input service ${warning.service && "error"}`}
+            className={`table__input service ${warning.service ? "error" : ''}`}
             autoComplete='off'
             onChange={(e) => debounced.callback(e.target.value, "service")}
           />
@@ -185,7 +185,7 @@ const Inputs = observer(({ cancelInput }) => {
         <div className='table__inputs-form'>
           <input
             type='text'
-            className={`table__input price ${warning.price && "error"}`}
+            className={`table__input price ${warning.service ? "error" : ''}`}
             autoComplete='off'
             onChange={(e) => debounced.callback(e.target.value, "price")}
           />
@@ -201,7 +201,7 @@ const Inputs = observer(({ cancelInput }) => {
         <div className='table__inputs-form'>
           <input
             type='text'
-            className={`table__input date ${warning.date && "error"}`}
+            className={`table__input date ${warning.service ? "error" : ''}`}
             autoComplete='off'
             onChange={(e) => debounced.callback(e.target.value, "date")}
           />

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { observer } from 'mobx-react-lite';
 
 import "./information.scss";
@@ -8,6 +8,14 @@ import { Diagram, SVGSprites } from './../../components';
 const Information = observer(() => {
   const [theme, setTheme] = useState(true);
   const [profit, setProfit] = useState(150);
+
+  useEffect(() => {
+    if (theme) {
+      document.documentElement.setAttribute('theme', 'light');
+    }else {
+      document.documentElement.setAttribute('theme', 'dark');
+    }
+  }, [theme])
 
   const themeSwitch = () => {
     setTheme(!theme);

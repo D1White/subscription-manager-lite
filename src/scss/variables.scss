@@ -1,3 +1,4 @@
+//Light theme
 $white_bg: #F5F7F9;
 $white_line: #D6D8E7;
 $black_text: #2E3554;
@@ -5,3 +6,19 @@ $green: #2ecc71;
 $grey: #EEEEEE;
 $red: #F03738;
 $blue: #3E66FB;
+$white: #ffffff;
+
+$dark_shodow-s:  rgba(0, 0, 0, 0.1);
+$dark_shodow-m:  rgba(0, 0, 0, 0.15);
+$dark_shodow-l:  rgba(0, 0, 0, 0.25);
+
+// Dark theme
+$dark_bg: #282828;
+$dark_line: #1B1B1B;
+// $light_text: #FFFFFF;
+
+
+
+@mixin transition($property) {
+  transition: $property 0.2s;
+}
