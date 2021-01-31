@@ -63,10 +63,13 @@
   &__profit-block {
     display: flex;
     align-items: flex-start;
+    position: relative;
 
     &__btn {
       opacity: 0.3;
       margin-left: 10px;
+      position: absolute;
+      left: 100%;
 
       &>svg {
         width: 20px;

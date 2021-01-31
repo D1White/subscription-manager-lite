@@ -19,12 +19,18 @@ const Diagram = memo(function Diagram({ profit, subscr }) {
   }, []);
 
   useEffect(() => {
-    setProcent(Math.round((subscr / profit) * 100));
+    const proc = Math.round((subscr / profit) * 100);
+    if (proc > 100) {
+      setProcent('>100');
+    }else {
+      setProcent(proc);
+    }
   }, [profit, subscr]);
 
   useEffect(() => {
     if (ellipse1.current) {
       const ctx1 = ellipse1.current.getContext("2d");
+      ctx1.clearRect(0, 0, 300, 340);
       ctx1.beginPath();
       ctx1.arc(187, 76, 60, Math.PI, getPosition(procent), false);
       ctx1.lineCap = "round";
@@ -49,6 +55,9 @@ const Diagram = memo(function Diagram({ profit, subscr }) {
     }
     if (procent > 75 && procent <= 100) {
       return ((2*procent) / 100 + 1) * Math.PI;
+    }
+    if (procent > 100) {
+      return 2*Math.PI; 
     }
   }
 
