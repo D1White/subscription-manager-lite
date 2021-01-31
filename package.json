@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "mobx": "^6.1.4",
+    "mobx-react-lite": "^3.2.0",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-colorful": "^4.4.4",

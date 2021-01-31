@@ -3,7 +3,7 @@ import "./subscription.scss";
 
 import { SVGSprites } from '../index';
 
-function Subscription({ service, price, date, color }) {
+const Subscription = React.memo(function Subscription({ service, price, date, color }) {
   return (
     <div className="table__subscr">
       <div className="table__logo">
@@ -30,6 +30,6 @@ function Subscription({ service, price, date, color }) {
         </div>
     </div>
   );
-}
+});
 
 export default Subscription;

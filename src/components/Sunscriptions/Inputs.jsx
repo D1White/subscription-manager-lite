@@ -1,13 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { HexColorPicker } from "react-colorful";
+import { observer } from "mobx-react-lite";
 
+import store from '../../store/store'
 import { SVGSprites } from '../index';
 
 import "./inputs.scss";
 import "react-colorful/dist/index.css";
 
-function Inputs() {
+const Inputs = observer(({ cancelInput }) => {
   const colorPicker = useRef();
 
   const [color, setColor] = useState("#eeeeee");
@@ -82,13 +84,8 @@ function Inputs() {
   }, [date]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // useEffect(() => {
-  //   console.log(service, price, date, color, isOpen);
   //   console.log(warning);
-  // }, [service, price, date, color, isOpen, warning]);
-
-  useEffect(() => {
-    console.log(warning);
-  }, [warning]);
+  // }, [warning]);
 
   const debounced = useDebouncedCallback(
     (value, type) => {
@@ -123,6 +120,24 @@ function Inputs() {
       toggleOpen(false);
     }
   };
+
+  const Submit = () => {
+    if (service && price && date) {
+      if (warning.service || warning.price || warning.date) {
+        return;
+      }else {
+        store.addSubscr({
+          service: service,
+          price: parseFloat(price),
+          date: parseInt(date),
+          color: color
+        });
+        cancelInput();
+      }
+    }else {
+      alert('⚠ Not all fields are filled!')
+    }
+  }
 
   return (
     <div className='table__form'>
@@ -199,16 +214,16 @@ function Inputs() {
         </div>
       </div>
 
-      <div className='table__form__actions'>
-        <button type='submit' className='table__form__btn submit' >
+      <div className='table__form__actions' >
+        <button type='submit' className='table__form__btn submit' onClick={Submit} >
           <SVGSprites name='check-icon' />
         </button>
-        <button type='reset' className='table__form__btn reset' >
+        <button type='reset' className='table__form__btn reset' onClick={cancelInput} >
           <SVGSprites name='cancel-icon' />
         </button>
       </div>
     </div>
   );
-}
+});
 
 export default Inputs;

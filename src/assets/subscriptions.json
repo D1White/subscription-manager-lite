@@ -2,12 +2,12 @@
   {
     "service": "Netflix",
     "price": 14.59,
-    "date": 12,
+    "date": 29,
     "color": "#B30711"
   },
   {
     "service": "YouTube premium",
-    "price": 5,
+    "price": 15,
     "date": 1,
     "color": "#FC0D1B"
   },

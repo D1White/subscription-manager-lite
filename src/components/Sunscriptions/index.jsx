@@ -1,18 +1,32 @@
-import React from "react";
-import "./subscriptions.scss";
+import { useState } from "react";
+import { observer } from "mobx-react-lite";
 
+import "./subscriptions.scss";
+import store from "../../store/store";
 import { Subscription, Inputs, SVGSprites } from "../../components";
 
-import subscriptions from "../../assets/subscriptions.json";
+const Subscriptions = observer(() => {
+  const [inputVisible, setInputVisible] = useState(false);
 
-function Subscriptions() {
+  const showInput = () => {
+    setInputVisible(true);
+  };
+
+  const cancelInput = () => {
+    setInputVisible(false);
+  };
+
   return (
     <div className='subscr'>
       <div className='subscr__container'>
         <div className='subscr__header'>
           <span className='subscr__title'>Subscriptions:</span>
-          <button type='button' className='subscr__add-btn'>
-            <SVGSprites name='ellipse_plus-icon' title='add' className='subscr__add-btn__ico' />
+          <button type='button' className='subscr__add-btn' onClick={showInput}>
+            <SVGSprites
+              name='ellipse_plus-icon'
+              title='add'
+              className='subscr__add-btn__ico'
+            />
             <span>add</span>
           </button>
         </div>
@@ -34,8 +48,8 @@ function Subscriptions() {
           </div>
           <hr />
           <div className='table__scroll'>
-            <Inputs />
-            {subscriptions.map((subscr, index) => (
+            {inputVisible && <Inputs cancelInput={cancelInput} />}
+            {store.subscriptions.map((subscr, index) => (
               <Subscription
                 service={subscr.service}
                 price={subscr.price}
@@ -49,6 +63,6 @@ function Subscriptions() {
       </div>
     </div>
   );
-}
+});
 
 export default Subscriptions;

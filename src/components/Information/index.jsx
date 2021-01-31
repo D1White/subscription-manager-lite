@@ -1,9 +1,11 @@
 import { useState } from "react";
-import "./information.scss";
+import { observer } from 'mobx-react-lite';
 
+import "./information.scss";
+import store from '../../store/store';
 import { Diagram, SVGSprites } from './../../components';
 
-function Information() {
+const Information = observer(() => {
   const [theme, setTheme] = useState(true);
   const [profit, setProfit] = useState(150);
 
@@ -51,14 +53,14 @@ function Information() {
           <hr className='inf__line' />
           <div className='inf__block'>
             <span className='inf__text-m'>Subscription</span>
-            <span className='inf__text-l'>35.86</span>
+            <span className='inf__text-l'>{store.subscPrice}</span>
             <span className='inf__text-s'>USD/month</span>
           </div>
         </div>
-        <Diagram profit={profit} subscr={35.86} />
+        <Diagram profit={profit} subscr={store.subscPrice} />
       </div>
     </div>
   );
-}
+});
 
 export default Information;

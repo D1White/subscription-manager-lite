@@ -1,5 +1,5 @@
-import React from 'react';
-import { Sunscriptions, Information } from './components'
+import React from "react";
+import { Sunscriptions, Information } from "./components";
 
 function App() {
   return (
