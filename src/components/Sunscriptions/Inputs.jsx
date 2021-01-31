@@ -85,6 +85,7 @@ function Inputs() {
   //   console.log(service, price, date, color, isOpen);
   //   console.log(warning);
   // }, [service, price, date, color, isOpen, warning]);
+
   useEffect(() => {
     console.log(warning);
   }, [warning]);
@@ -132,7 +133,11 @@ function Inputs() {
           style={{ backgroundColor: color }}
         >
           {!isOpen && (
-            <SVGSprites name='color_lens-icon' title='color picker' className='table__picker-ico' />
+            <SVGSprites
+              name='color_lens-icon'
+              title='color picker'
+              className={`table__picker-ico ${parseInt(color.slice(1), 16) < 8388607 && 'light'}`}
+            />
           )}
         </div>
         {isOpen && (

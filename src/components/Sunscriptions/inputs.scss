@@ -19,6 +19,10 @@
     &-ico {
       width: 24px;
       height: 24px;
+
+      &.light {
+        fill: $white_bg;
+      }
     }
 
     &-block {
