@@ -1,7 +1,9 @@
 @import '../../scss/variables.scss';
+@import '../../scss/media_mixin.scss';
 
 .subscr {
-  width: calc(100% - 520px);
+  // width: calc(100% - 520px);
+  width: 100%;
   &__container {
     width: 100%;
     max-width: 1083px;
@@ -9,6 +11,11 @@
     padding-top: 50px;
     display: flex;
     flex-direction: column;
+
+    @include _979 {
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
   }
 
   &__header {
@@ -17,6 +24,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+    padding: 0px 30px;
   }
 
   &__title {
@@ -66,6 +74,7 @@
   &__table {
     display: flex;
     flex-direction: column;
+    align-items: center;
     >hr {
       width: 100%;
       height: 2px;
@@ -73,6 +82,10 @@
       margin-top: 13px;
       margin-bottom: 25px;
       @include transition(background-color);
+
+      @include _1170 {
+        width: 90%;
+      }
     }
   }
 }
@@ -92,9 +105,17 @@
     
     flex: 3;
 
+    @include _600 {
+      font-size: 15px;
+      line-height: 20px;
+    }
+
 
     &:first-child, &:last-child {
       flex: 1;
+      @include _600 {
+        flex: 0.5;
+      }
     }
 
     &.price {
@@ -103,15 +124,18 @@
 
     &.date {
       text-align: right;
-      // display: flex;
-      // justify-content: right;
     }
   }
 
   &__scroll {
+    width: 100%;
     max-height: 700px;
     min-height: 270px;
     overflow-y: scroll;
     scroll-behavior: smooth;
+
+    @include _979 {
+      overflow-y:inherit;
+    }
   }
 }

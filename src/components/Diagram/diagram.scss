@@ -1,4 +1,5 @@
 @import '../../scss/variables.scss';
+@import '../../scss/media_mixin.scss';
 
 .diagram {
   width: 100%;
@@ -15,6 +16,13 @@
 
   @include transition(background-color);
   @include transition(border);
+
+  @include _1170 {
+    width: 300px;
+  }
+  @include _979 {
+    margin-bottom: 35px;
+  }
 
   &__text {
     font-size: 18px;

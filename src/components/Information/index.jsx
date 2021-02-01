@@ -47,7 +47,7 @@ const Information = observer(() => {
             <SVGSprites name={theme ? 'light_theme-icon' : 'dark_theme-icon'} title='theme switcher'/>
           </button>
         </div>
-        <div className='inf_main'>
+        <div className='inf__main'>
           <div className='inf__block'>
             <span className='inf__text-m'>Your Profit</span>
             <div className='inf__profit-block' onClick={editProfit}>

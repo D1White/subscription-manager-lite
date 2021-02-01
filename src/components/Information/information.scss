@@ -1,9 +1,23 @@
 @import '../../scss/variables.scss';
+@import '../../scss/media_mixin.scss';
 
 .inf {
   width: 520px;
   height: 100%;
   padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include _1170 {
+    width: 300px;
+  }
+  @include _979 {
+    width: 100%;
+  }
+  @include _600 {
+    padding: 30px 0;
+  }
   
   &__container {
     width: 100%;
@@ -13,11 +27,21 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;  
     @include transition(border-left); 
+
+    @include _1170 {
+      padding: 0 30px;
+    }
+    @include _979 {
+      border-left: none;
+      border-bottom: 2px solid $white_line;
+    }
   }
   
   &__header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,8 +76,17 @@
   }
 
   &__main {
+    width: 100%;
     display: flex;
     flex-direction: column;
+
+    @include _979 {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 35px;
+      margin-bottom: 50px;
+    }
   }
 
   &__block {
@@ -110,6 +143,9 @@
     margin-top: 25px;
     margin-bottom: 25px;
     @include transition(coborderlor);
-  }
 
+    @include _979 {
+      display: none;
+    }
+  }
 }

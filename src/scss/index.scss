@@ -17,7 +17,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 
 @import './variables.scss';
 @import './dark_theme.scss';
-
+@import './media_mixin.scss';
 
 body {
   margin: 0;
@@ -33,11 +33,19 @@ body {
   @include transition(background);
 }
 
-
 #root {
   display: flex;
+  justify-content: space-between;
   height: 100%;
+  flex-direction: row-reverse;
+
+  @include _979 {
+    height: 100vh;
+    flex-direction: column;
+    justify-content: start;
+  }
 }
+
 
 ::-webkit-scrollbar {
   width: 10px;

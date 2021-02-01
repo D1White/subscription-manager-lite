@@ -164,7 +164,7 @@ const Inputs = observer(({ cancelInput }) => {
           </div>
         )}
       </div>
-
+      <div className="table__break-clr"></div>
       <div className='table__inputs-block'>
         <div className='table__inputs-form'>
           <input
@@ -213,7 +213,7 @@ const Inputs = observer(({ cancelInput }) => {
           )}
         </div>
       </div>
-
+      <div className="table__break-btn"></div>
       <div className='table__form__actions' >
         <button type='submit' className='table__form__btn submit' onClick={Submit} >
           <SVGSprites name='check-icon' />

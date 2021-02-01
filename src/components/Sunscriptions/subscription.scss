@@ -1,4 +1,5 @@
 @import '../../scss/variables.scss';
+@import '../../scss/media_mixin.scss';
 
 .table {
 
@@ -41,6 +42,10 @@
     justify-content: center;
     position: relative;
 
+    @include _480 {
+      display: none;
+    }
+
     >span {
       font-size: 30px;
       font-weight: 700;
@@ -61,9 +66,17 @@
   &__text {
     flex: 3;
 
+    @include _1170 {
+        flex: 2;
+    }
+    @include _600 {
+        flex: 1;
+        font-size: 21px;
+    }
+
     &.price {
       font-weight: 700;
-      text-align: center;
+      text-align: center; 
     }
 
     &.date {
