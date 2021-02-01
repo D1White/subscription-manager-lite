@@ -132,6 +132,7 @@
     max-height: 700px;
     min-height: 270px;
     overflow-y: scroll;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 
     @include _979 {

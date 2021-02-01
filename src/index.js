@@ -4,8 +4,10 @@ import './scss/index.scss';
 import App from './App.jsx';
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <>
     <App />
-  </React.StrictMode>,
+  </>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );

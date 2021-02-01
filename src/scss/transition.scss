@@ -1,0 +1,39 @@
+// .subscr {
+//   &-enter {
+//     opacity: 0;
+//   }
+//   &-enter-active {
+//     opacity: 1;
+//     transition: opacity 2000ms;
+//   }
+//   &-exit {
+//     opacity: 1;
+//   }
+//   &-exit-active {
+//     opacity: 0;
+//     transition: opacity 2000ms;
+//   }
+// }
+
+.table {
+  &__form {
+    animation-name: subscr;
+    animation-duration: 0.5s;
+  }
+
+  &__subscr {
+    animation-name: subscr;
+    animation-duration: 0.5s;
+    transition: transform 1.5s 0s, opacity 1.25s 0s;
+
+    &.delete {
+      transform: translateX(100vw);
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes subscr {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
