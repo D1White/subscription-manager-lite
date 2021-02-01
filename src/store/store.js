@@ -16,7 +16,9 @@ class Store {
   }
 
   removeSubscr(index) {
-    this.subscriptions.slice(index + 1);
+    this.subscriptions = this.subscriptions.filter((e, i) => {
+     return i !== index;
+    })
     this.priceTotal();
   }
 

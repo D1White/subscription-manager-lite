@@ -12,7 +12,7 @@ import "react-colorful/dist/index.css";
 const Inputs = observer(({ cancelInput }) => {
   const colorPicker = useRef();
 
-  const [color, setColor] = useState("#eeeeee");
+  const [color, setColor] = useState("#1B1B1B");
   const [isOpen, toggleOpen] = useState(false);
   const [service, setService] = useState(null);
   const [price, setPrice] = useState(null);
@@ -185,7 +185,7 @@ const Inputs = observer(({ cancelInput }) => {
         <div className='table__inputs-form'>
           <input
             type='text'
-            className={`table__input price ${warning.service ? "error" : ''}`}
+            className={`table__input price ${warning.price ? "error" : ''}`}
             autoComplete='off'
             onChange={(e) => debounced.callback(e.target.value, "price")}
           />
@@ -201,7 +201,7 @@ const Inputs = observer(({ cancelInput }) => {
         <div className='table__inputs-form'>
           <input
             type='text'
-            className={`table__input date ${warning.service ? "error" : ''}`}
+            className={`table__input date ${warning.date ? "error" : ''}`}
             autoComplete='off'
             onChange={(e) => debounced.callback(e.target.value, "date")}
           />

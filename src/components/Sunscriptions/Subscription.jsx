@@ -1,9 +1,16 @@
 import React from "react";
-import "./subscription.scss";
+import { observer } from "mobx-react-lite";
 
+import store from '../../store/store'
+import "./subscription.scss";
 import { SVGSprites } from '../index';
 
-const Subscription = React.memo(function Subscription({ service, price, date, color }) {
+const Subscription = observer(({ service, price, date, color, index }) => {
+
+  const removeSubscr = () => {
+    store.removeSubscr(index);
+  }
+
   return (
     <div className="table__subscr">
       <div className="table__logo">
@@ -24,7 +31,7 @@ const Subscription = React.memo(function Subscription({ service, price, date, co
           <button type='button' className='table__btn edit' >
             <SVGSprites name='edit-icon' />
           </button>
-          <button type='button' className='table__btn delete' >
+          <button type='button' className='table__btn delete' onClick={removeSubscr} >
             <SVGSprites name='delete-icon' />
           </button>
         </div>

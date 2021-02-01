@@ -55,6 +55,7 @@ const Subscriptions = observer(() => {
                 price={subscr.price}
                 date={subscr.date}
                 color={subscr.color}
+                index={index}
                 key={`${subscr.service}_${index}`}
               />
             ))}
