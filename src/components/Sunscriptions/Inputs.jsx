@@ -151,7 +151,7 @@ const Inputs = observer(({ cancelInput }) => {
             <SVGSprites
               name='color_lens-icon'
               title='color picker'
-              className={`table__picker-ico ${parseInt(color.slice(1), 16) < 8388607 && 'light'}`}
+              className={`table__picker-ico ${parseInt(color.slice(1), 16) < 8388607 ? 'light' : 'dark'}`}
             />
           )}
         </div>

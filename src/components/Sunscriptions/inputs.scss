@@ -21,7 +21,10 @@
       height: 24px;
 
       &.light {
-        fill: $white_bg;
+        fill: $white_bg !important;
+      }
+      &.dark {
+        fill: $dark_bg !important;
       }
     }
 

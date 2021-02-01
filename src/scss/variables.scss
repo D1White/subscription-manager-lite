@@ -21,4 +21,7 @@ $dark_line: #1B1B1B;
 
 @mixin transition($property) {
   transition: $property 0.2s;
+  -webkit-transition: $property 0.2s;
+  -o-transition: $property 0.2s;
+  -moz-transition: $property 0.2s;
 }
