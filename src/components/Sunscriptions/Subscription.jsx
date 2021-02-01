@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { observer } from "mobx-react-lite";
-import { CSSTransition } from "react-transition-group";
 
 import store from "../../store/store";
 import "./subscription.scss";
