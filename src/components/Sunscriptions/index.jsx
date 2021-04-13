@@ -56,7 +56,7 @@ const Subscriptions = observer(() => {
                 date={subscr.date}
                 color={subscr.color}
                 index={index}
-                key={`${subscr.service}_${index}`}
+                key={`${Math.random().toString(36).substring(7)}_${index}`}
               />
             ))}
           </div>
